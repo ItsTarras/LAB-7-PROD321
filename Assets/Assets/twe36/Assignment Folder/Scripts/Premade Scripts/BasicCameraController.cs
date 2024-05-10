@@ -91,7 +91,16 @@ public class BasicCameraController : MonoBehaviour
                 Debug.Log("Can't see you.");
             }
         }
+
+
+        //DOn't allow it to go above a max speed.
+        if (rb.velocity.magnitude > 10)
+        {
+            rb.velocity = rb.velocity.normalized * 10;
+        }
     }
+
+
 
     public Quaternion getRotation()
     {
